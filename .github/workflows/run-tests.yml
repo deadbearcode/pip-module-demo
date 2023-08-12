@@ -16,4 +16,4 @@ jobs:
         run: python -m unittest discover
 
       - name: run type checking
-        run: mypy flitton_fib_py
+        run: mypy deadbear_fib_py
