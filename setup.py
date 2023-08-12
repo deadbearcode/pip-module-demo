@@ -5,7 +5,7 @@ with open("README.md", "r") as file:
 
 setup(
     name="deadbear_fib_py",
-    version="0.0.1",
+    version="0.0.2",
     author="Sean Baier",
     author_email="sean.baier@deadbear.io",
     description="Calculates a Fibonacci number",
