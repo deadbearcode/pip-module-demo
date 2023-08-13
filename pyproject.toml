@@ -10,6 +10,9 @@ packages = [{include = "deadbear_fib_rs"}]
 python = "^3.9"
 
 
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.5.0"
+
 [build-system]
 requires = ["poetry-core", "setuptools", "wheel", "setuptools-rust"]
 build-backend = "poetry.core.masonry.api"

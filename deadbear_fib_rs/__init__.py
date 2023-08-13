@@ -1,1 +1,1 @@
-from .deadbear_fib_rs import *
+from deadbear_fib_rs import *
