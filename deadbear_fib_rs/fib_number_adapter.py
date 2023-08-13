@@ -4,7 +4,7 @@ from .counter import Counter
 from .deadbear_fib_rs import fibonacci_number, fibonacci_numbers
 
 
-class DedbearFibNumberAdapter:
+class DeadbearFibNumberAdapter:
     def __init__(self, number_input: Union[int, List[int]]) -> None:
         self.input: Union[int, List[int]] = number_input
         self.success: bool = False
