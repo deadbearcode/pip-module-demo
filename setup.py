@@ -26,7 +26,9 @@ setup(
     entry_points={
         "console_scripts": [
             "fib-number = deadbear_fib_rs.fib_number_command:fib_number_command",
+            "config-fib = deadbear_fib_rs.config_number_command:config_number_command",
         ],
     },
     zip_safe=False,
+    requirements=["pyyaml>=3.13"],
 )
