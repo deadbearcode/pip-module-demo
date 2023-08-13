@@ -27,7 +27,7 @@ pub fn object_interface<'a>(input_object: &'a PyAny) -> PyResult<&'a PyAny> {
 
     config_dict = extract_data(input_object, "number", config_dict);
     config_dict = extract_data(input_object, "numbers", config_dict);
-    
+
     let output_dict: &PyDict = run_config(config_dict).unwrap();
 
     input_object
