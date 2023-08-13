@@ -1,36 +1,27 @@
-import pathlib
+#!/usr/bin/env python
+from setuptools import dist
 
-from setuptools import find_packages, setup
-
-with open("README.md", "r") as file:
-    long_description = file.read()
-
-VERSION_PATH = f"{pathlib.Path(__file__).parent.absolute()}/deadbear_fib_py/version.py"
-with open(VERSION_PATH, "r") as file:
-    version = file.read().split("=")[1].replace("'", "")
+dist.Distribution().fetch_build_eggs(["setuptools_rust"])
+from setuptools import setup
+from setuptools_rust import Binding, RustExtension
 
 setup(
-    name="deadbear_fib_py",
-    version=version,
-    author="Sean Baier",
-    author_email="sean.baier@deadbear.io",
-    description="Calculates a Fibonacci number",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/deadbearcode/pip-module-demo",
-    install_requires=["PyYAML>=4.1.2", "dill>=0.2.8"],
-    packages=find_packages(exclude=("tests",)),
-    classifiers=[
-        "Development Status :: 4 - Beta",
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
+    name="deadbear-fib-rs",
+    version="0.1",
+    rust_extensions=[
+        RustExtension(
+            ".deadbear_fib_rs.deadbear_fib_rs", path="Cargo.toml", binding=Binding.PyO3
+        )
     ],
-    python_requires=">=3",
-    tests_require=["pytest"],
-    entry_points={
-        "console_scripts": [
-            "fib-number = deadbear_fib_py.cmd.fib_numb:fib_numb",
-        ],
-    },
-    extras_require={"server": ["Flask>=1.0.0"]},
+    packages=["deadbear_fib_rs"],
+    classifiers=[
+        "License :: OSI Approved :: MIT License",
+        "Development Status :: 3 - Alpha",
+        "Intended Audience :: Developers",
+        "Programming Language :: Python",
+        "Programming Language :: Rust",
+        "Operating System :: POSIX",
+        "Operating System :: MacOS :: MacOS X",
+    ],
+    zip_safe=False,
 )
