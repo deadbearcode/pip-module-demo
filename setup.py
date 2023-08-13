@@ -9,7 +9,9 @@ setup(
     name="deadbear-fib-rs",
     version="0.1",
     rust_extensions=[
-        RustExtension("deadbear_fib_rs", path="Cargo.toml", binding=Binding.PyO3)
+        RustExtension(
+            ".deadbear_fib_rs.deadbear_fib_rs", path="Cargo.toml", binding=Binding.PyO3
+        )
     ],
     packages=["deadbear_fib_rs"],
     classifiers=[
