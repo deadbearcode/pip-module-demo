@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "deadbear-fib-rs"
+version = "0.1.0"
+description = ""
+authors = ["Sean Baier <sean.t.baier@gmail.com>"]
+readme = "README.md"
+packages = [{include = "deadbear_fib_rs"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core", "setuptools", "wheel", "setuptools-rust"]
+build-backend = "poetry.core.masonry.api"
