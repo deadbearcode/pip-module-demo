@@ -23,5 +23,10 @@ setup(
         "Operating System :: POSIX",
         "Operating System :: MacOS :: MacOS X",
     ],
+    entry_points={
+        "console_scripts": [
+            "fib-number = deadbear_fib_rs.fib_number_command:fib_number_command",
+        ],
+    },
     zip_safe=False,
 )
