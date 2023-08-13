@@ -30,5 +30,4 @@ setup(
         ],
     },
     zip_safe=False,
-    requirements=["pyyaml>=3.13"],
 )
